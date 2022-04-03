@@ -8,7 +8,54 @@
     <title>Document</title>
 </head>
 <body>  
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        <h1 v-if="param">Vue восхитителен!</h1>
+        <h1 v-else>О, нет 😢</h1>
+
+        <h1 v-show="ok">Всегда не виден</h1>
+
+        <div v-if="type === 'A'">
+            A
+          </div>
+          <div v-else-if="type === 'B'">
+            B
+          </div>
+          <div v-else-if="type === 'C'">
+            C
+          </div>
+          <div v-else>
+            Точно не A, B или C
+          </div>
+    </div>
+    <div id="app2">
+        <ul id="array-rendering">
+            <li v-for="item in items">
+              {{ item.message }}
+            </li>
+          </ul>
+
+          <ul id="array-with-index">
+            <li v-for="(item, index) in items">
+              {{ parentMessage }} - {{ index }} - {{ item.message }}
+            </li>
+          </ul>
+    </div>
+
+    <div id="app3">
+        <ul id="v-for-object" class="demo">
+            <li v-for="value in myObject">
+              {{ value }}
+            </li>
+          </ul>
+    </div>
+
+    <div id="app4">
+        <ul id="v-for-object" class="demo">
+            <li v-for="value in items">
+              {{ value.message }} - {{ value.id }}
+            </li>
+          </ul>
+    </div>
    
    <script src="js/main.js"></script>
 </body>
