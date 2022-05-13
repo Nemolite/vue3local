@@ -1,4 +1,5 @@
-  Vue.createApp({
+/*
+Vue.createApp({
     data() {
       return {
         param: false,
@@ -61,3 +62,29 @@ const inner =
       }
     }
   ).mount('#app4')
+
+  */
+
+/** Пример подсчета заказов */
+const order = {
+  data() {
+    return {
+      items: [
+        { bi: 1,bn: 'Суп',bz: 100  },
+        { bi: 2,bn: 'Каша',bz: 80  },
+        { bi: 3,bn: 'Компот',bz: 30  }       
+      ],
+      checkedNames: [             
+      ],
+      computed:  {
+        getAnswer() {
+          return this.checkedNames.reduce((acc, n) => {
+            return acc += n
+         }, 0)          
+        }
+      } 
+
+    }
+  }
+}
+Vue.createApp(order).mount('#order')
